@@ -36,8 +36,8 @@ def driver(env, car):
     yield env.timeout(3)
     car.action.interrupt()
 
-
-env = simpy.Environment()
+#env = simpy.Environment()
+env = simpy.RealtimeEnvironment()
 car = Car(env)
 env.process(driver(env, car))
 env.run(until=15)

@@ -18,6 +18,7 @@ def car(env, name, bcs, driving_time, charge_duration):
         print('%s leaving the bcs at %s' % (name, env.now))
 
 
+#env = simpy.RealtimeEnvironment()
 env = simpy.Environment()
 bcs = simpy.Resource(env, capacity=2)
 
