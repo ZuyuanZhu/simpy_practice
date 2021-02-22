@@ -3,11 +3,14 @@ import simpy
 
 def sub(env):
     yield env.timeout(1)
+    print(f'sub return at {env.now}')
     return 23
 
 
 def parent(env):
+    print(f'parent at {env.now}')
     ret = yield env.process(sub(env))
+    print(f'return ret={ret} at {env.now}')
     return ret
 
 

@@ -16,6 +16,8 @@ def my_proc(env):
 
 env = simpy.Environment()
 p1 = env.process(my_proc(env))
+print(f'current active process', env.active_process)
 env.active_process
+print(f'after active process {env.active_process}')
 env.step()
-env.active_process
+print('last active process', env.active_process)
